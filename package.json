@@ -1,8 +1,8 @@
 {
-  "name": "BitcoinTokenDesktop",
+  "name": "BitcoinONEDesktop",
   "version": "1.0.0",
-  "author": "BTK Development <btkwebmaster@gmail.com>",
-  "description": "BTK Desktop Wallet",
+  "author": "BTCONE Development <thebitcoinone1@gmail.com>",
+  "description": "BTCONE Desktop Wallet",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
@@ -17,8 +17,8 @@
     "postinstall": ""
   },
   "build": {
-    "productName": "Bitcoin Token",
-    "appId": "org.bitcointoken.desktop",
+    "productName": "Bitcoin ONE",
+    "appId": "org.bitcoinone.desktop",
     "directories": {
       "output": "build"
     },
