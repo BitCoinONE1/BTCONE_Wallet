@@ -1,8 +1,8 @@
-<p align="center"><img src="https://btk.community/img/logo.png"></p>
+<p align="center"><img src="https://www.bitcoinone.io/wp-content/uploads/2018/07/index.png"></p>
 
-## Bitcoin Token Desktop Wallet
+## Bitcoin ONE Desktop Wallet
 
-The Bitcoin Token team is happy to provide our community with an easy to use, cross-platform, secure desktop wallet for sending, receiving and storing your Bitcoin Tokens. 
+The Bitcoin ONE team is proud to launch this BitCoin ONE Compliant wallet, receiving and storing your Bitcoin ONE is easy and with a great UI. 
 
 ## Features Include
 
@@ -11,22 +11,13 @@ The Bitcoin Token team is happy to provide our community with an easy to use, cr
 - Auto-recommendation of sending gas fee for the novice users.
 - Clean, simple user interface.
 
-This wallet is exclusive to BTK tokens, you can't load other ERC-20 tokens into this wallet.
+This wallet is exclusive to BTCONE, you can't load other ERC-20 tokens into this wallet.
 
-## Screenshots
-
-![BTK Wallet](https://btk.community/assets/apps/wallet.png)
-
-![BTK Receive](https://btk.community/assets/apps/receive.png)
-
-![BTK Send](https://btk.community/assets/apps/send.png)
-
-![BTK Settings](https://btk.community/assets/apps/settings.png)
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within the wallet, please send an e-mail to BTK Development via [btkwebmaster@gmail.com](mailto:btkwebmaster@gmail.com). All security vulnerabilities will be promptly addressed.
+Send any info or concern to [thebitcoinone1@gmail.com](mailto:thebitcoinone1@gmail.com).
 
 ## License
 
-The web wallet is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The web wallet is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).# BTCONE_Wallet
