@@ -1,6 +1,6 @@
 <template>
 	<div>
-    <nav class="p-2" style="background-color: rgb(255, 185, 1); border-bottom: 1px solid #ccc;">
+    <nav class="p-2" style="background-color: rgb(8a8a8a); border-bottom: 1px solid #3D3D3D;">
       <div>
         <div>
           <img id="logo" src="~@/assets/img/logo.png" style="margin-top: 4px;">
@@ -22,8 +22,8 @@
         <p class="mt-4">{{ tokenName }} is not responsible for any loss of Ethereum (ETH) or {{ tokenName }} ({{ tokenTicker }}) by using this wallet.</p>
       </div>
       <div class="flex justify-center mt-4">
-        <button 
-          class="focus:outline-none bg-orange hover:bg-orange-dark text-white py-3 px-6 rounded" 
+        <button
+          class="focus:outline-none bg-orange hover:bg-orange-dark text-white py-3 px-6 rounded"
           type="button"
           @click="saveAgreement()"
         >I Accept this Agreement</button>

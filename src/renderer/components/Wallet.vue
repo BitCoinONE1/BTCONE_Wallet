@@ -8,11 +8,11 @@
       </div>
       <div class="flex items-center">
         <div class="mr-12">
-          <p class="text-xs text-center uppercase leading-normal">Balance</p> 
+          <p class="text-xs text-center uppercase leading-normal">Balance</p>
           <p class="text-lg leading-none">{{ tokenBalance }} {{ tokenTicker }}</p>
         </div>
         <div>
-          <p class="text-xs text-center uppercase leading-normal">Value</p> 
+          <p class="text-xs text-center uppercase leading-normal">Value</p>
           <p class="text-lg leading-none">${{ tokenValue }} USD</p>
         </div>
       </div>
@@ -136,7 +136,7 @@
       },
 
       getTokenPrice: function () {
-        /*
+
         axios.get('https://coinlib.io/api/v1/coin?key=' + env.coinlibApiKey + '&pref=USD&symbol=' + env.tokenTicker)
           .then(response => {
             if(response.data.price != undefined) {
@@ -144,15 +144,7 @@
               this.tokenPrice = response.data.price;
             }
           }).catch(error => {console.log(error)});
-          */
-        axios.get('https://btk.community/api/cmc.php')
-          .then(response => {
-            if(response.data.USD != undefined) {
-              localStorage.setItem('tokenPrice', JSON.parse(response.data.USD).toString());
-              this.tokenPrice = response.data.USD
-            }
-          }).catch(error => {console.log(error)});
-      },
+          },
 
       getTokenBalance: function () {
         web3.eth.call({
@@ -160,7 +152,7 @@
           data: '0x70a08231000000000000000000000000' + this.walletAddress.substring(2)
         }, (error, balance) => {
           if(balance) {
-            let tokenBalance = web3.utils.fromWei(web3.utils.toBN(balance).toString(), 'ether'); 
+            let tokenBalance = web3.utils.fromWei(web3.utils.toBN(balance).toString(), 'ether');
             let tokenValue = tokenBalance * this.tokenPrice;
 
             this.tokenBalance = tokenBalance;
@@ -184,7 +176,7 @@
             if(this.completedTxs.length != null) {
               fromBlock = response - 86000;
             }
-            
+
             let contract = new web3.eth.Contract(env.abi, env.contractAddress);
 
             let toTxs = await contract.getPastEvents('Transfer', { filter: {_to: this.walletAddress}, fromBlock: fromBlock, toBlock: 'latest'});
@@ -255,7 +247,7 @@
             } else {
               localStorage.setItem('tokenCompletedTxs', JSON.stringify(this.completedTxs));
               this.refreshing = false;
-            } 
+            }
           }).catch(error => {console.log(error)});
       },
 

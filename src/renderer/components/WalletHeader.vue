@@ -1,6 +1,6 @@
 <template>
-  <nav class="flex items-center justify-between p-2 border-b border-grey" style="background-color: rgb(255, 185, 1);">
-    <div class="flex items-center flex-no-shrink text-white mr-6">
+  <nav class="flex items-center justify-between p-2 border-b border-grey" style="background-color: rgb(3D3D3D);">
+    <div class="flex items-center flex-no-shrink text-white mr-2">
         <img id="logo" src="~@/assets/img/logo.png" style="margin-top: 4px;">
     </div>
     <div class="w-full block flex-grow flex items-center w-auto">
@@ -24,9 +24,9 @@
       </div>
     </div>
     <div class="flex justify-content">
-      <a 
-        href="#" 
-        class="inline-block text-sm px-4 py-2 mr-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-grey hover:bg-white no-underline" 
+      <a
+        href="#"
+        class="inline-block text-sm px-4 py-2 mr-2 leading-none border rounded text-black border-black hover:border-transparent hover:text-grey hover:bg-white no-underline"
         @click="navigate('Settings')"
       >
         <i class="fa fa-cog"></i>

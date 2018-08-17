@@ -1,6 +1,6 @@
 <template>
 	<div class="h-screen bg-grey-lighter">
-    
+
     <wallet-header :walletAddress="walletAddress"></wallet-header>
 
     <div class="flex justify-center">
@@ -9,15 +9,15 @@
           <div class="flex justify-between">
             <h3 class="mb-2">Send {{ currency }}</h3>
             <div class="inline-flex">
-              <button 
-                class="focus:outline-none border border-bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded-l" 
+              <button
+                class="focus:outline-none border border-bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded-l"
                 :class="currency == tokenTicker ? 'bg-grey-light' : 'bg-grey-lightest'"
                 @click="setCurrency(tokenTicker)"
               >
                 {{ tokenTicker }}
               </button>
-              <button 
-                class="focus:outline-none border border-bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded-r" 
+              <button
+                class="focus:outline-none border border-bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded-r"
                 :class="currency == tokenTicker ? 'bg-grey-lightest' : 'bg-grey-light'"
                 @click="setCurrency('ETH')"
               >
@@ -27,8 +27,8 @@
           </div>
           <div>
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Pay To</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               class="appearance-none outline-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-grey-light"
               placeholder="Recipient Address"
               v-model="sendRecipient"
@@ -43,8 +43,8 @@
                </span>
               <a href="#" class="block uppercase tracking-wide text-blue text-xs font-bold mb-2 no-underline" @click="sendMax()">Send Max</a>
             </div>
-            <input 
-              type="text" 
+            <input
+              type="text"
               class="appearance-none outline-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-grey-light"
               :placeholder="currency"
               v-model="sendAmount"
@@ -57,8 +57,8 @@
             </div>
             <div class="flex">
               <div class="w-1/3">
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   class="appearance-none outline-none block bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-grey-light"
                   v-model="sendGas"
                 >
@@ -82,17 +82,17 @@
           </div>
           <div>
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Account Password</label>
-            <input 
-              type="password" 
+            <input
+              type="password"
               class="appearance-none outline-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tightfocus:outline-none focus:border-grey-light"
               v-model="password"
-              placeholder="Password" 
+              placeholder="Password"
             >
           </div>
-          <button 
-            type="button" 
-            class="focus:outline-none bg-orange hover:bg-orange-dark text-white py-3 px-6 rounded"
-            style="margin-top: 5px;" 
+          <button
+            type="button"
+            class="focus:outline-none bg-blue hover:bg-blue-dark text-white py-3 px-6 rounded"
+            style="margin-top: 5px;"
             @click="verify"
           >Send Transaction <i class="ml-1 fas fa-spin fa-circle-notch" v-if="loading"></i>
           </button>
@@ -149,9 +149,9 @@
         web3.eth.getGasPrice((error, wei) => {
           if(wei) {
             const gasGwei = web3.utils.fromWei(wei, 'gwei');
-            
+
             this.sendGas = Math.round(gasGwei);
-            
+
             this.setSendGasFee();
           }
         });
@@ -174,7 +174,7 @@
           .then(response => {
             if(response.data.USD != undefined) {
               localStorage.setItem('ethPrice', JSON.parse(response.data.USD).toString());
-              
+
               this.ethPrice = response.data.USD;
             }
           }).catch(error => {console.log(error)});

@@ -1,6 +1,6 @@
 <template>
 	<div>
-    <nav class="p-2" style="background-color: rgb(255, 185, 1); border-bottom: 1px solid #ccc;">
+    <nav class="p-2" style="background-color: rgb(8a8a8a); border-bottom: 1px solid #3D3D3D;">
       <div>
         <div>
           <img id="logo" src="~@/assets/img/logo.png" style="margin-top: 4px;">
@@ -23,10 +23,10 @@
           <div class="flex justify-between">
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Seed Phrase</label>
             <div class="flex">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 class="block uppercase tracking-wide text-blue text-xs font-bold mb-2 no-underline hover:text-blue-dark"
-                id="seed" 
+                id="seed"
                 :data-clipboard-text="seedPhrase"
                 @click="setCopied()"
                 v-if="!restore"
@@ -34,38 +34,38 @@
               <i class="ml-2 pt-1 text-xs text-blue fas fa-check-double" v-if="copied"></i>
             </div>
           </div>
-          <textarea 
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight lowercase text-2xl  focus:outline-none focus:border-grey-light" 
-            rows="2" 
+          <textarea
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight lowercase text-2xl  focus:outline-none focus:border-grey-light"
+            rows="2"
             v-model="seedPhrase"
           ></textarea>
         </div>
         <div>
           <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Set Wallet Password</label>
-          <input 
-            type="password" 
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-grey-light" 
+          <input
+            type="password"
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-grey-light"
             v-model="password"
-            placeholder="Password" 
+            placeholder="Password"
           >
         </div>
         <div>
           <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">Confirm Wallet Password</label>
-          <input 
-            type="password" 
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-grey-light" 
+          <input
+            type="password"
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-grey-light"
             v-model="confirmPassword"
-            placeholder="Confirm Password" 
+            placeholder="Confirm Password"
           >
         </div>
         <div class="flex justify-between mt-4">
-          <button type="button" class="focus:outline-none bg-orange hover:bg-orange-dark text-white py-3 px-6 rounded" @click="generateWallet">
+          <button type="button" class="focus:outline-none bg-blue hover:bg-blue-dark text-white py-3 px-6 rounded" @click="generateWallet">
             <span v-if="restore">Restore Wallet</span>
             <span v-else>Create Wallet</span>
           </button>
-          <a 
-            href="#" 
-            class="bg-red-lightest border border-red-light text-red-dark py-3 px-6 rounded no-underline" 
+          <a
+            href="#"
+            class="bg-red-lightest border border-red-light text-red-dark py-3 px-6 rounded no-underline"
             v-if="goBack === true"
             @click="$router.push('Settings');"
           >Cancel</a>
@@ -107,7 +107,7 @@
   	methods: {
       hasAcceptedAgreement: async function () {
         const agreement = await localStorage.getItem('agreement');
-        
+
         if(agreement !== 'accepted') {
           this.$router.push('Agreement');
         } else {
@@ -155,7 +155,7 @@
         if(this.seedPhrase != '' && this.password != '' && this.confirmPassword != '') {
           if(this.password == this.confirmPassword) {
             if(keystore.isSeedValid(this.seedPhrase)) {
-              
+
               this.clearStorage();
 
               keystore.createVault({
