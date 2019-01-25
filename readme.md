@@ -1,6 +1,6 @@
 <p align="center"><img src="https://www.bitcoinone.io/wp-content/uploads/2018/07/index.png"></p>
 
-## Bitcoin ONE Desktop Wallet MAC OS
+## Bitcoin ONE Desktop Wallet MAC OS - OLD WALLET DO NOT USE
 
 The Bitcoin ONE team is proud to launch this BitCoin ONE Compliant wallet, receiving and storing your Bitcoin ONE is easy and with a great UI. 
 
